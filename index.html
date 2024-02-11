@@ -30,10 +30,15 @@
       id="answer-div"
     >
       <div>
-        <img src="mika-noah.gif" alt="" id="yay-img" />
+        <img src="mika-noah.gif" alt="" id="yay-img" style="display: none" />
       </div>
       <div>
-        <img src="i-love-you-gif-1.gif" alt="helo" id="ans-img" />
+        <img
+          src="i-love-you-gif-1.gif"
+          alt="helo"
+          id="ans-img"
+          style="display: none"
+        />
       </div>
     </div>
 
@@ -78,6 +83,8 @@
       $(document).ready(function(){
         $("#ans-img").css("display","none");
         $("#yay-img").css("display","none");
+        $("#answer-div").css("visibility", "hidden");
+
         var counter=0;
         $("#noBtn").on("click", function(){
           ChangeTextAndButtonSize(counter++);
@@ -95,6 +102,7 @@
             $("#noBtn").text("No");
             $('#question-div').hide();
             $("#question-div").css("visibility", "hidden");
+            $("#answer-div").css("visibility", "visible");
             $("#ans-img").css("display","block");
             $("#yay-img").css("display","block");
             $(window).scrollTop(0);
