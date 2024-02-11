@@ -16,6 +16,9 @@
     <style>
       body {
         height: 100vh;
+        background-color: #f8f8f8;
+        font-family: Arial, sans-serif;
+        /* overflow: scroll; */
       }
       .container {
         height: 100%;
@@ -56,7 +59,9 @@
           Yes
         </button>
 
-        <button class="btn btn-danger" id="noBtn" type="button">No</button>
+        <button class="btn btn-danger text-center" id="noBtn" type="button">
+          No
+        </button>
       </div>
     </div>
 
@@ -108,54 +113,89 @@
             $(window).scrollTop(0);
 
 
+
           }else if(counter==0){
             $("#noBtn").text("Are you sure???");
             $("#yesBtn").css("font-size","50px");
           }else if(counter==1){
             $("#noBtn").text("Really sure???");
-            $("#yesBtn").css("font-size","100px");
+            // $("#yesBtn").css("font-size","100px");
+            $("#yesBtn").css("padding","30px");
+
+
+
           }else if(counter==2){
             $("#noBtn").text("Are you Positive???");
-            $("#yesBtn").css("font-size","150px");
+            // $("#yesBtn").css("font-size","150px");
+            $("#yesBtn").css("padding","50px");
+
+
           }else if(counter==3){
             $("#noBtn").text("Just think about it");
-            $("#yesBtn").css("font-size","200px");
+            // $("#yesBtn").css("font-size","200px");
+            $("#yesBtn").css("padding","100px");
+
           }else if(counter==4){
             $("#noBtn").text("If you say no, i will be very sad na");
-            $("#yesBtn").css("font-size","250px");
+            // $("#yesBtn").css("font-size","250px");
+            $("#yesBtn").css("padding","200px");
+
           }else if(counter==5){
             $("#noBtn").text("I will be very very sad");
-            $("#yesBtn").css("font-size","300px");
+            // $("#yesBtn").css("font-size","300px");
+            $("#yesBtn").css("padding","300px");
+
           }else if(counter==6){
-            $("#noBtn").text("I will be very very very sad");
-            $("#yesBtn").css("font-size","350px");
+            $("#noBtn").text("I will still love you, though!");
+            // $("#yesBtn").css("font-size","350px");
+            $("#yesBtn").css("padding","350px");
+
           }else if(counter==7){
             $("#noBtn").text("Ok fine. I will stop asking");
-            $("#yesBtn").css("font-size","400px");
+            // $("#yesBtn").css("font-size","400px");
+            $("#yesBtn").css("padding","400px");
+
           }else if(counter==8){
-            $("#noBtn").text("Just kidding. Please say yes na..");
-            $("#yesBtn").css("font-size","450px");
+            $("#noBtn").text("JK! Please say yes na..");
+            // $("#yesBtn").css("font-size","450px");
+            $("#yesBtn").css("padding","400px");
+
           }else if(counter==9){
             $("#noBtn").text("Dont break my heart na..");
-            $("#yesBtn").css("font-size","500px");
+            // $("#yesBtn").css("font-size","500px");
+            $("#yesBtn").css("padding","400px");
+
           }else if(counter==10){
             $("#noBtn").text("Huhuhuhu");
-            $("#yesBtn").css("font-size","550px");
+            // $("#yesBtn").css("font-size","550px");
+            $("#yesBtn").css("padding","400px");
+
           }else if(counter==11){
             $("#noBtn").text("Me Cryinggggggg");
-            $("#yesBtn").css("font-size","600px");
+            // $("#yesBtn").css("font-size","600px");
+            $("#yesBtn").css("padding","400px");
+
           }else if(counter==12){
             $("#noBtn").text("Nako");
-            $("#yesBtn").css("font-size","650px");
+            // $("#yesBtn").css("font-size","650px");
+            $("#yesBtn").css("padding","450px");
+
           }else if(counter==13){
             $("#noBtn").text(":(");
-            $("#yesBtn").css("font-size","650px");
+            // $("#yesBtn").css("font-size","650px");
+            $("#yesBtn").css("padding","450px");
+
           }else if(counter==14){
-            $("#noBtn").text("Babbyyy be My Valentine Na");
-            $("#yesBtn").css("font-size","600px");
+            $("#noBtn").text("BB be My Valentine Na");
+            // $("#yesBtn").css("font-size","600px");
+            $("#yesBtn").css("padding","400px");
+
           }else if(counter==15){
             $("#noBtn").css("display", "none");
-            $("#yesBtn").css("font-size","1000px");
+          $("#yesBtn").text("SAY YESSSS!!!!!!!!!!!!!!!!!!!");
+           $("#yesBtn").css("font-size","100px");
+            $("#yesBtn").css("padding","1000px");
+
           }
         }
       });
