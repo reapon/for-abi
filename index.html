@@ -90,7 +90,7 @@
       $(document).ready(function(){
           $("#ans-img").css("display","none");
           $("#yay-img").css("display","none");
-          $("#answer-div").css("visibility", "hidden");
+          // $("#answer-div").css("visibility", "hidden");
 
           var counter=0;
           $("#noBtn").on("click", function(){
@@ -109,10 +109,11 @@
                   $("#noBtn").text("No");
                   $('#question-div').hide();
                   $("#question-div").css("visibility", "hidden");
-                  $("#answer-div").css("visibility", "visible");
+                  // $("#answer-div").css("visibility", "visible");
                   $("#ans-img").css("display","block");
                   $("#yay-img").css("display","block");
                   $(window).scrollTop(0);
+
                   // $("#ans-img").focus();
                   // document.scrollingElement.scrollTop;
 
@@ -149,24 +150,24 @@
                   $("#yesBtn").css("padding","100px");
               }else if(counter==10){
                   $("#noBtn").text("Huhuhuhu🥺");
-                  $("#yesBtn").css("padding","110px");
+                  $("#yesBtn").css("padding","100px 110px");
               }else if(counter==11){
                   $("#noBtn").text("Me Cryinggggggg😭");
-                  $("#yesBtn").css("padding","120px");
+                  $("#yesBtn").css("padding","100px 150px");
               }else if(counter==12){
                   $("#noBtn").text("Nako😭");
-                  $("#yesBtn").css("padding","130px");
+                  $("#yesBtn").css("padding","100px 180px");
               }else if(counter==13){
                   $("#noBtn").text("😭");
-                  $("#yesBtn").css("padding","140px");
+                  $("#yesBtn").css("padding","100px 200px");
               }else if(counter==14){
                   $("#noBtn").text("BB be My Valentine Na😘");
-                  $("#yesBtn").css("padding","200px");
+                  $("#yesBtn").css("padding","100px 210px");
               }else if(counter==15){
                   $("#noBtn").css("display", "none");
                   $("#yesBtn").text("SAY YESSSS!!!!!!!!!!!!!!!!!!!😭");
                   $("#yesBtn").css("font-size","1.5rem");
-                  $("#yesBtn").css("padding","300px");
+                  $("#yesBtn").css("padding","100px 250px");
               }
           }
       });
