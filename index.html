@@ -34,7 +34,7 @@
     <title>SERIOUS QUESTION!</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="topofthePage">
       <div class="d-flex justify-content-center align-items-center">
         <img src="mika-noah.gif" alt="" id="yay-img" style="display: none" />
       </div>
@@ -54,8 +54,8 @@
         <div>
           <img src="bear-love.gif" alt="" />
         </div>
-        <h4 class="">Hi, My World! I have a question for you..</h4>
-        <h5 class="text-muted">Will you be my VALENTINE???</h5>
+        <h5 class="">Hi, My World! I have a question for you..</h5>
+        <h6 class="text-muted">Will you be my VALENTINE???</h6>
         <div>
           <button class="btn btn-success mr-2" id="yesBtn" type="button">
             Yes
@@ -112,8 +112,11 @@
                   // $("#answer-div").css("visibility", "visible");
                   $("#ans-img").css("display","block");
                   $("#yay-img").css("display","block");
-                  $(window).scrollTop(0);
+                  // $(window).scrollTop(0);
 
+                  // $(window).scrollTop( $("#topofthePage").offset().top );
+
+                  document.getElementById('topofthePage').scrollTo(0, 0)
                   // $("#ans-img").focus();
                   // document.scrollingElement.scrollTop;
 
@@ -165,7 +168,7 @@
                   $("#yesBtn").css("padding","100px 210px");
               }else if(counter==15){
                   $("#noBtn").css("display", "none");
-                  $("#yesBtn").text("SAY YESSSS!!!!!!!!!!!!!!!!!!!😭");
+                  $("#yesBtn").text("SAY YESSSS!!!!!!😭");
                   $("#yesBtn").css("font-size","1.5rem");
                   $("#yesBtn").css("padding","100px 250px");
               }
