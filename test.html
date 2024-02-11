@@ -1,86 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Will You Be My Valentine?</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
     <style>
       body {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
         background-color: #f8f8f8;
         font-family: Arial, sans-serif;
       }
+
       .container {
+        padding-top: 50px; /* Adjust top padding */
         text-align: center;
       }
-      .bear-img {
-        width: 150px;
-        height: auto;
-      }
-      .question {
-        margin-top: 20px;
-        font-size: 24px;
-      }
+
       .btn {
-        display: inline-block;
-        margin-top: 20px;
+        font-size: 20px;
         padding: 10px 20px;
-        font-size: 18px;
-        cursor: pointer;
-        border: none;
-        background-color: #ff6699;
-        color: #fff;
-        border-radius: 5px;
-        transition: transform 0.2s;
-      }
-      .btn:hover {
-        transform: scale(1.1);
-      }
-      .yes-btn {
-        background-color: #4caf50;
+        margin: 10px;
       }
     </style>
+
+    <title>SERIOUS QUESTION!</title>
   </head>
   <body>
     <div class="container">
-      <img src="bear.gif" class="bear-img" alt="Bear with heart jumping" />
-      <div class="question">Will you be my valentine?</div>
-      <button class="btn yes-btn" onclick="handleYesClick()">Yes</button>
-      <button class="btn" onclick="handleNoClick()">No</button>
+      <div>
+        <img src="mika-noah.gif" alt="" id="yay-img" style="display: none" />
+      </div>
+      <div>
+        <img
+          src="i-love-you-gif-1.gif"
+          alt="helo"
+          id="ans-img"
+          style="display: none"
+        />
+      </div>
+
+      <div
+        class="d-flex align-items-center justify-content-center flex-column"
+        id="question-div"
+      >
+        <div>
+          <img src="bear-love.gif" alt="" />
+        </div>
+        <h4 class="">Hi, My World! I have a question for you..</h4>
+        <h5 class="text-muted">Will you be my VALENTINE???</h5>
+        <div>
+          <button class="btn btn-success mr-2" id="yesBtn" type="button">
+            Yes
+          </button>
+          <button class="btn btn-danger text-center" id="noBtn" type="button">
+            No
+          </button>
+        </div>
+      </div>
     </div>
 
-    <script>
-      let noButtonClicks = 0;
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
 
-      function handleNoClick() {
-        const cuteResponses = [
-          "Aw, maybe next time?",
-          "But whyy? 😢",
-          "You're breaking my heart! 💔",
-          "I'll still love you, though!",
-          "Please reconsider! 🥺",
-        ];
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
 
-        const response = cuteResponses[noButtonClicks % cuteResponses.length];
-        document.querySelector(".btn").textContent = response;
-        noButtonClicks++;
-      }
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
 
-      function handleYesClick() {
-        const yesButton = document.querySelector(".yes-btn");
-        if (yesButton.offsetWidth < window.innerWidth) {
-          yesButton.style.width = yesButton.offsetWidth + 50 + "px";
-          yesButton.style.height = yesButton.offsetHeight + 20 + "px";
-        } else {
-          alert("Yayy! I love you too! ❤️");
-          // You can add more actions here, like showing a cute image or animation
-        }
-      }
+    <script type="text/javaScript">
+      $(document).ready(function(){
+          $("#ans-img").css("display","none");
+          $("#yay-img").css("display","none");
+          $("#answer-div").css("visibility", "hidden");
+
+          var counter=0;
+          $("#noBtn").on("click", function(){
+              ChangeTextAndButtonSize(counter++);
+          });
+
+
+          $("#yesBtn").on("click", function(){
+              counter=-1;
+              ChangeTextAndButtonSize(counter);
+          })
+
+
+          function ChangeTextAndButtonSize(counter){
+              if(counter==-1){
+                  $("#noBtn").text("No");
+                  $('#question-div').hide();
+                  $("#question-div").css("visibility", "hidden");
+                  $("#answer-div").css("visibility", "visible");
+                  $("#ans-img").css("display","block");
+                  $("#yay-img").css("display","block");
+                  $(window).scrollTop(0);
+
+
+
+              }else if(counter==0){
+                  $("#noBtn").text("Are you sure???");
+                  $("#yesBtn").css("font-size","1.2rem");
+              }else if(counter==1){
+                  $("#noBtn").text("Really sure???");
+                  $("#yesBtn").css("padding","20px");
+              }else if(counter==2){
+                  $("#noBtn").text("Are you Positive???");
+                  $("#yesBtn").css("padding","30px");
+              }else if(counter==3){
+                  $("#noBtn").text("Just think about it");
+                  $("#yesBtn").css("padding","40px");
+              }else if(counter==4){
+                  $("#noBtn").text("If you say no, i will be very sad na");
+                  $("#yesBtn").css("padding","50px");
+              }else if(counter==5){
+                  $("#noBtn").text("I will be very very sad");
+                  $("#yesBtn").css("padding","60px");
+              }else if(counter==6){
+                  $("#noBtn").text("I will still love you, though!");
+                  $("#yesBtn").css("padding","70px");
+              }else if(counter==7){
+                  $("#noBtn").text("Ok fine. I will stop asking");
+                  $("#yesBtn").css("padding","80px");
+              }else if(counter==8){
+                  $("#noBtn").text("JK! Please say yes na..");
+                  $("#yesBtn").css("padding","90px");
+              }else if(counter==9){
+                  $("#noBtn").text("Dont break my heart na..");
+                  $("#yesBtn").css("padding","100px");
+              }else if(counter==10){
+                  $("#noBtn").text("Huhuhuhu");
+                  $("#yesBtn").css("padding","110px");
+              }else if(counter==11){
+                  $("#noBtn").text("Me Cryinggggggg");
+                  $("#yesBtn").css("padding","120px");
+              }else if(counter==12){
+                  $("#noBtn").text("Nako");
+                  $("#yesBtn").css("padding","130px");
+              }else if(counter==13){
+                  $("#noBtn").text(":(");
+                  $("#yesBtn").css("padding","140px");
+              }else if(counter==14){
+                  $("#noBtn").text("BB be My Valentine Na");
+                  $("#yesBtn").css("padding","150px");
+              }else if(counter==15){
+                  $("#noBtn").css("display", "none");
+                  $("#yesBtn").text("SAY YESSSS!!!!!!!!!!!!!!!!!!!");
+                  $("#yesBtn").css("font-size","1.5rem");
+                  $("#yesBtn").css("padding","200px");
+              }
+          }
+      });
     </script>
   </body>
 </html>
